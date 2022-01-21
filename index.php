@@ -7,8 +7,8 @@ $api_calls = array(
 );
 
 $json = json_decode(file_get_contents('php://input'));
-$action = trim(mysql_real_escape_string($json->service));
-$username = trim(mysql_real_escape_string($json->username));
+$action = trim($json->service);
+$username = trim($json->username);
 
 if($action && in_array($action, $api_calls)){
     // check if limited account
